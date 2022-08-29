@@ -1,0 +1,12 @@
+diff -u arctracker-0.2.0/Makefile.in arctracker-0.2.0-LDFLAGS-fix/Makefile.in
+--- arctracker-0.2.0/Makefile.in	2005-05-26 18:43:30.000000000 +0100
++++ arctracker-0.2.0-LDFLAGS-fix/Makefile.in	2022-08-29 17:18:24.524298981 +0100
+@@ -24,7 +24,7 @@
+ INSTALLDIR=@prefix@
+ 
+ arctracker: arctracker.o initialise.o read_mod.o play_mod.o
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(CLIBS) -o arctracker arctracker.o initialise.o read_mod.o play_mod.o
++	$(CC) $(CFLAGS) $(CLIBS) -o arctracker arctracker.o initialise.o read_mod.o play_mod.o $(LDFLAGS)
+ 
+ arctracker.o: arctracker.h arctracker.c
+ 	$(CC) $(CFLAGS) -c arctracker.c
